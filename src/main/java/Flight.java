@@ -21,4 +21,9 @@ public class Flight {
     public int availableSeats() {
         return this.plane.getPlaneType().getCapacity() - this.passengerList.size();
     }
+
+
+    public void addPassenger(Passenger passenger) {
+        this.passengerList.add(passenger);
+    }
 }
