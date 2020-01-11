@@ -1,5 +1,5 @@
 public enum PlaneType {
-    BOEING747(200, 3000),
+    BOEING747(200, 4000),
     RV7A(2,500);
 
 

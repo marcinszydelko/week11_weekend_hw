@@ -17,6 +17,10 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
+    public Plane getPlane() {
+        return plane;
+    }
+
     public ArrayList<Passenger> getPassengerList() {
         return passengerList;
     }
@@ -31,4 +35,5 @@ public class Flight {
             this.passengerList.add(passenger);
         }
     }
+
 }
