@@ -16,5 +16,8 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
-    
+
+//    public int availableSeats() {
+//        return this.plane
+//    }
 }
