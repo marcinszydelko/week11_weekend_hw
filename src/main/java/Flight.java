@@ -34,6 +34,7 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         if (availableSeats() > 0) {
             this.passengerList.add(passenger);
+            passenger.setFlight(Flight.this);
         }
     }
 

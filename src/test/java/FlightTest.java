@@ -41,6 +41,12 @@ public class FlightTest {
     }
 
     @Test
+    public void shouldAddFlightToPassenger() {
+        flight.addPassenger(passenger1);
+        assertEquals(flight, passenger1.getFlight());
+    }
+
+    @Test
     public void shouldNotAddPassengerToFlightIfCapacityFull() {
         flight2.addPassenger(passenger1);
         flight2.addPassenger(passenger2);
