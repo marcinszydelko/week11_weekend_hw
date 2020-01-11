@@ -9,6 +9,7 @@ public class Flight {
     private String departureTime;
 
     public Flight(Plane plane, String flightNumber, String destination, String departureAirport, String departureTime) {
+        this.passengerList = new ArrayList<Passenger>();
         this.plane = plane;
         this.flightNumber = flightNumber;
         this.destination = destination;
@@ -17,7 +18,7 @@ public class Flight {
     }
 
 
-//    public int availableSeats() {
-//        return this.plane
-//    }
+    public int availableSeats() {
+        return this.plane.getPlaneType().getCapacity() - this.passengerList.size();
+    }
 }

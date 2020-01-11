@@ -14,9 +14,9 @@ public class FlightTest {
         flight = new Flight(plane, "FR756", "EDI", "GLA", "1530");
     }
 
-//    @Test
-//    public void shouldGetNumberOfAvailableSeats() {
-//        assertEquals(200, flight.availableSeats());
-//    }
+    @Test
+    public void shouldGetNumberOfAvailableSeats() {
+        assertEquals(200, flight.availableSeats());
+    }
 
 }
