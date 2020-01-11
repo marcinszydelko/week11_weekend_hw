@@ -17,6 +17,9 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
+    public ArrayList<Passenger> getPassengerList() {
+        return passengerList;
+    }
 
     public int availableSeats() {
         return this.plane.getPlaneType().getCapacity() - this.passengerList.size();
@@ -24,6 +27,8 @@ public class Flight {
 
 
     public void addPassenger(Passenger passenger) {
-        this.passengerList.add(passenger);
+        if (availableSeats() > 0) {
+            this.passengerList.add(passenger);
+        }
     }
 }
