@@ -36,4 +36,8 @@ public class Flight {
         }
     }
 
+
+    public double reservedBaggageWeight() {
+        return 0.5 * plane.getPlaneType().getTotalWeight();
+    }
 }

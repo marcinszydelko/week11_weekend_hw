@@ -42,6 +42,11 @@ public class FlightTest {
         assertEquals(2, flight2.getPassengerList().size());
     }
 
+    @Test
+    public void shouldReturnReservedBaggageWeight() {
+        assertEquals(2000.00,flight.reservedBaggageWeight(), 0.01);
+    }
+
 
 
 

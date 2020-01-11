@@ -6,4 +6,8 @@ public class Passenger {
         this.name = name;
         this.bags = bags;
     }
+
+    public int getBags() {
+        return bags;
+    }
 }

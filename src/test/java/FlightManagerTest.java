@@ -22,11 +22,23 @@ public class FlightManagerTest {
         flight2 = new Flight(plane2, "GB241", "GDA", "KRK", "1020");
         passenger1 = new Passenger("John", 2);
         passenger2 = new Passenger("Eugene", 1);
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
     }
 
     @Test
     public void shouldCalculateReservedBaggageWeightPerPassenger() {
         assertEquals(10.00,flightManager.bagWeightPerPerson(flight), 0.01);
+    }
+
+    @Test
+    public void shouldCalculateWeightOfBookedBaggage() {
+        assertEquals(30.00, flightManager.bookedBaggage(flight), 0.01);
+    }
+
+    @Test
+    public void shouldCalculateRemainingWeightReserved() {
+        assertEquals( 1970.00, flightManager.remainingReservedWeight(flight), 0.01);
     }
 
 
