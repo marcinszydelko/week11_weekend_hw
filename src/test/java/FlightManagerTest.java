@@ -46,8 +46,7 @@ public class FlightManagerTest {
     public void shouldCalculateRemainingWeightReserved() {
         assertEquals( 1970.00, flightManager.remainingReservedWeight(flight), 0.01);
     }
-
-
+    
 
 
 }

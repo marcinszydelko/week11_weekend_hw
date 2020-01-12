@@ -31,10 +31,34 @@ public class Flight {
     }
 
 
+    public int getRandomSeat() {
+        ArrayList<Integer> seatsTaken = new ArrayList<Integer>();
+
+        for (Passenger passenger : passengerList) {
+            seatsTaken.add(passenger.getSeatNumber());
+        }
+
+        int max = plane.getPlaneType().getCapacity();
+        int randomSeat;
+        Boolean notFound = true;
+
+        do {
+            randomSeat = (int)((Math.random()*((max - 1)+1)) + 1);
+            for (int seatNumber : seatsTaken) {
+                if (seatNumber != randomSeat) {
+                    notFound = false;
+                }
+            }
+        } while (notFound);
+
+        return randomSeat;
+    }
+
     public void addPassenger(Passenger passenger) {
         if (availableSeats() > 0) {
             this.passengerList.add(passenger);
             passenger.setFlight(Flight.this);
+            passenger.setSeatNumber(getRandomSeat());
         }
     }
 

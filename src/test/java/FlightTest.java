@@ -1,9 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.*;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FlightTest {
 
@@ -47,6 +49,25 @@ public class FlightTest {
     }
 
     @Test
+    public void shouldAddSeatNumberToPassenger() {
+        flight.addPassenger(passenger1);
+        assertTrue(passenger1.getSeatNumber() > 0);
+        assertTrue(passenger1.getSeatNumber() <= 200);
+    }
+
+    @Test
+    public void shouldNotGiveSameSeatNumberToDifferentPassengers() {
+        flight2.addPassenger(passenger1);
+        flight2.addPassenger(passenger2);
+        boolean notSameSeat = (passenger1.getSeatNumber() != passenger2.getSeatNumber());
+        System.out.println(passenger1.getSeatNumber());
+        System.out.println(passenger2.getSeatNumber());
+        assertTrue(notSameSeat);
+    }
+
+
+
+    @Test
     public void shouldNotAddPassengerToFlightIfCapacityFull() {
         flight2.addPassenger(passenger1);
         flight2.addPassenger(passenger2);
@@ -59,6 +80,7 @@ public class FlightTest {
     public void shouldReturnReservedBaggageWeight() {
         assertEquals(2000.00,flight.reservedBaggageWeight(), 0.01);
     }
+
 
 
 
